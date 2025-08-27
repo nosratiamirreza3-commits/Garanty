@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>وب‌سایت ثبت گارانتی</title>
+<style>
+    /* Reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; transition: all 0.3s ease; }
+    body { line-height: 1.6; background: #f4f7f9; color: #333; scroll-behavior: smooth; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header { background: #1e88e5; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    header h2 { font-size: 1.8rem; }
+    header nav a { margin-left: 1rem; color: #fff; font-weight: bold; position: relative; }
+    header nav a::after { content: ''; position: absolute; width: 0%; height: 2px; background: #fff; left: 0; bottom: -3px; transition: 0.3s; }
+    header nav a:hover::after { width: 100%; }
+
+    /* Hero */
+    .hero { text-align: center; padding: 5rem 2rem; background: linear-gradient(to right, #42a5f5, #90caf9); color: #fff; }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; opacity: 0; transform: translateY(20px); }
+    .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0; transform: translateY(20px); }
+    .hero button { background: #fff; color: #1e88e5; border: none; padding: 1rem 2rem; font-size: 1.1rem; cursor: pointer; border-radius: 8px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .hero button:hover { background: #e3f2fd; transform: scale(1.05); }
+
+    /* Sections */
+    section { padding: 4rem 2rem; max-width: 1000px; margin: auto; }
+
+    /* Cards */
+    .cards { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+    .card { background: #fff; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); flex: 1 1 250px; text-align: center; transform: translateY(30px); opacity: 0; }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+
+    /* Forms */
+    form { background: #fff; padding: 2.5rem; border-radius: 15px; max-width: 500px; margin: auto; box-shadow: 0 5px 15px rgba(0,0,0,0.1); opacity: 0; transform: translateY(30px); }
+    form input, form textarea, form button { width: 100%; padding: 0.9rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; }
+    form textarea { resize: vertical; min-height: 100px; }
+    form button { background: #1e88e5; color: #fff; border: none; cursor: pointer; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    form button:hover { background: #1565c0; transform: scale(1.03); }
+
+    /* Footer */
+    footer { background: #1e88e5; color: #fff; text-align: center; padding: 2rem; margin-top: 2rem; font-size: 0.95rem; }
+
+    /* Animations */
+    .animate { opacity: 1 !important; transform: translateY(0) !important; transition: all 0.8s ease-out; }
+
+    /* Responsive */
+    @media(max-width:768px){ 
+        .cards { flex-direction: column; }
+        header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h2>ثبت گارانتی</h2>
+    <nav>
+        <a href="#home">خانه</a>
+        <a href="#register">ثبت محصول</a>
+        <a href="#dashboard">داشبورد</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">تماس با ما</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h1>ثبت گارانتی محصولات شما ساده شد</h1>
+    <p>به راحتی محصول خود را ثبت کنید و وضعیت گارانتی را دنبال کنید.</p>
+    <button onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">ثبت محصول</button>
+</section>
+
+<section id="features">
+    <h2 style="text-align:center;margin-bottom:2rem;">ویژگی‌ها</h2>
+    <div class="cards">
+        <div class="card"><h3>🔒 امنیت اطلاعات</h3><p>تمام اطلاعات شما با امنیت کامل ذخیره می‌شود.</p></div>
+        <div class="card"><h3>📊 داشبورد کاربر</h3><p>مشاهده وضعیت گارانتی محصولات و مدیریت آن‌ها.</p></div>
+        <div class="card"><h3>💬 پشتیبانی سریع</h3><p>پشتیبانی سریع و پاسخگو برای تمامی کاربران.</p></div>
+    </div>
+</section>
+
+<section id="register">
+    <h2 style="text-align:center;margin-bottom:2rem;">ثبت محصول</h2>
+    <form id="productForm">
+        <input type="text" name="fullname" placeholder="نام و نام خانوادگی" required>
+        <input type="email" name="email" placeholder="ایمیل" required>
+        <input type="tel" name="phone" placeholder="شماره تماس" required>
+        <input type="text" name="product" placeholder="نام محصول" required>
+        <input type="text" name="serial" placeholder="شماره سریال محصول" required>
+        <input type="date" name="date" required>
+        <button type="submit">ثبت محصول</button>
+    </form>
+</section>
+
+<section id="dashboard">
+    <h2 style="text-align:center;margin-bottom:2rem;">داشبورد کاربری</h2>
+    <div class="cards">
+        <div class="card"><h3>محصول ۱</h3><p>وضعیت گارانتی: فعال</p></div>
+        <div class="card"><h3>محصول ۲</h3><p>وضعیت گارانتی: فعال</p></div>
+    </div>
+</section>
+
+<section id="about">
+    <h2 style="text-align:center;margin-bottom:2rem;">درباره ما</h2>
+    <p style="text-align:center; max-width:700px; margin:auto;">شرکت ما با هدف ساده کردن فرآیند ثبت گارانتی محصولات برای مشتریان، ارائه خدمات سریع و امن و ایجاد تجربه‌ای کاربرپسند برای همه کاربران فعالیت می‌کند.</p>
+</section>
+
+<section id="contact">
+    <h2 style="text-align:center;margin-bottom:2rem;">تماس با ما</h2>
+    <form id="contactForm">
+        <input type="text" name="fullname" placeholder="نام و نام خانوادگی" required>
+        <input type="email" name="email" placeholder="ایمیل" required>
+        <textarea name="message" placeholder="پیام شما" required></textarea>
+        <button type="submit">ارسال پیام</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 ثبت گارانتی. تمامی حقوق محفوظ است.</p>
+</footer>
+
+<script>
+/* فرم‌ها */
+document.getElementById('productForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('محصول با موفقیت ثبت شد!');
+    this.reset();
+});
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('پیام شما با موفقیت ارسال شد!');
+    this.reset();
+});
+
+/* انیمیشن اسکرول */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('animate');
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.hero h1, .hero p, .cards .card, form').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
